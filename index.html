@@ -4,37 +4,380 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio</title>
+    <title>Formulir Kontak</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo">APsirr</label>
+      <ul>
+        <i class="uil uil-search search-icon" id="searchIcon"></i>
+        <div class="search-box">
+          <i class="uil uil-search search-icon"></i>
+          <input type="text" placeholder="Search here..." />
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#why me">Contact</a></li>
+        </ul>
+    </nav>
+    <section></section>
+</head>
+<body>
+    <h1>Formulir Kontak</h1>
+    <form id="contact-form" action="#" method="post">
+        <div>
+            <label for="full-name">Nama lengkap:</label>
+            <input type="text" id="full-name" name="full-name">
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+        </div>
+        <div>
+            <label for="phone">Nomor handphone:</label>
+            <input type="text" id="phone" name="phone">
+        </div>
+        <div>
+            <label for="message">Pesan:</label>
+            <textarea id="message" name="message"></textarea>
+        </div>
+        <button type="submit">Kirim</button>
+    </form>
 
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Skrip jQuery untuk validasi formulir -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#contact-form").submit(function(e){
+                e.preventDefault();
 
+                var fullName = $("#full-name").val();
+                var email = $("#email").val();
+                var phone = $("#phone").val();
+                var message = $("#message").val();
+
+                if (fullName === "") {
+                    alert("Nama lengkap harus diisi");
+                    return false;
+                }
+
+                if (email === "") {
+                    alert("Email harus diisi");
+                    return false;
+                } else {
+                    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailPattern.test(email)) {
+                        alert("Format email tidak valid");
+                        return false;
+                    }
+                }
+
+                if (phone === "") {
+                    alert("Nomor handphone harus diisi");
+                    return false;
+                } else {
+                    var phonePattern = /^\d{10,12}$/;
+                    if (!phonePattern.test(phone)) {
+                        alert("Nomor handphone harus terdiri dari 10-12 digit angka");
+                        return false;
+                    }
+                }
+
+                if (message === "") {
+                    alert("Pesan harus diisi");
+                    return false;
+                }
+
+                // Jika semua validasi berhasil, formulir dapat dikirim
+                alert("Formulir berhasil dikirim!");
+                // Tambahan kode untuk mengirim formulir ke backend dapat ditambahkan di sini
+            });
+        });
+    </script>
+</body>
+</html>
+</body>
+<style>
+            /* CSS untuk halaman web responsif */
+    
+            /* Untuk layar dengan lebar maksimum 500px */
+            @media screen and (max-width: 500px) {
+                .landing-content {
+                    flex-direction: column;
+                }
+                .intro, .profile-pic, .icon-land {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+
+            /* CSS untuk navbar */
+        *{
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: montserrat;
+        }
+        nav{
+            background: #5b46d7;
+            height: 80px;
+            width: 100%;
+        }
+        label.logo{
+            color:white;
+            font-size:35px;
+            line-height: 80px;
+            padding: 0 100px;
+            font-weight: bold;    
+        }
+        nav ul{
+            float:right;
+            margin-right: 20px;
+        }
+        nav ul li{
+            display: inline-block;
+            line-height: 80px;
+            margin: 0 5px;
+        }
+        nav ul li a{
+            color:white;
+            font-size: 17px;
+            padding: 7px 13px;
+            borderr-radius: 3px;
+            text-transform: uppearcase;
+        }
+        a.active,a.hover{
+            background: #ebe1e1c8;
+            transition: .5s;
+        }
+        .checkbtn{
+            font-size: 30px;
+            color: white;
+            float: right;
+            line-height: 8opx;
+            margin-right: 40px;
+            cursor: pointer;
+            display: none;
+        }
+        #check{
+            display: none;
+        }
+        @media (max-width: 952px){
+            label.logo{
+                font-size: 30px;
+                padding-left: 50px;
+            }
+            nav ul li a{
+                font-size: 16px;
+            }
+        }
+        @media (max-width: 858px){
+            .checkbtn{
+                display: block;
+            }
+            ul{
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                background: #d7c19f;
+                top: 80px;
+                left: -100%;
+                text-align: center;
+                transition: all .5s;
+            }
+            nav ul li{
+                display: block;
+                margin: 50px 0;
+                line-height: 30px;
+            }
+            nav ul li a{
+                font-size: 20px;
+            }
+            a:hover,a.active{
+                background: none;
+                color: #144a8d;
+            }
+            #check:checked ~ ul{
+                left: 0;
+            }
+        }
+        section{
+            background: url(bg1.jpg) no-repeat;
+            background-size: cover;
+            height: calc(100vh - 80px);
+        }
+        .navbar {
+            background: #144bba;
+            color: #333;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .nav-links {
+            list-style-type: none;
+        }
+
+        .nav-links li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        .nav-links li a {
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .nav-links li a:hover {
+            color: #0e3bb7;
+        }
+    
+            /* Untuk layar dengan lebar maksimum 300px */
+            @media screen and (max-width: 300px) {
+                .navbar {
+                    padding: 0.5rem 0;
+                }
+                .nav-links li {
+                    display: block;
+                    margin: 10px 0;
+                }
+            }
+        </style>
     </head>
+    <body>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio</title>
+    <style>
+        /* CSS Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #E47917;
+            color: #333;
+        }
+
+        .navbar {
+            background: #E47917;
+            color: #333;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .nav-links {
+            list-style-type: none;
+        }
+
+        .nav-links li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        .nav-links li a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .landing-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 50px;
+        }
+
+        .intro {
+            flex: 1;
+        }
+
+        .profile-pic {
+            flex: 1;
+            text-align: center;
+        }
+
+        .icon-land img {
+            margin-right: 10px;
+        }
+
+        /* Add your remaining CSS styles here */
+
+    </style>
 <body>
  
 <!-- Navbar -->
-<nav>
-    <div class="nav-bar">
-        <i class='bx bx-menu sidebarOpen' ></i>
-        <span class="logo navLogo"><a href="#">APsirr</a></span>
-        <div class="menu">
-            <div class="logo-toggle">
-                <span class="logo"><a href="#">APsirr</a></span>
-                <i class='bx bx-x siderbarClose'></i>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-        
+<nav class="navbar">
+    <div class="logo">
+        <img src="images/mines_103901.png" alt="Logo"  style="width: 100px; height: 50px; ">
     </div>
-</nav>
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#why me">Contact</a></li>
+    </ul>
+</body>
+</html>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Sisipkan file CSS eksternal jika diperlukan -->
+    <style>
+        /* CSS untuk bagian Landing Page */
+        #home {
+            background-color: #E47917; /* Warna latar belakang */
+            padding: 50px; /* Padding untuk konten */
+            text-align: center; /* Pusatkan teks */
+        }
+
+        .landing-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap; /* Agar konten berada dalam satu baris */
+        }
+
+        .intro {
+            flex: 1; /* Biarkan intro memenuhi sebagian besar ruang */
+            max-width: 600px; /* Maksimum lebar konten */
+            text-align: left; /* Rata kiri teks pada intro */
+            margin-right: 20px; /* Jarak antara intro dan gambar profil */
+        }
+
+        .profile-pic {
+            flex: 1; /* Biarkan gambar profil memenuhi sebagian besar ruang */
+            max-width: 300px; /* Maksimum lebar gambar profil */
+            text-align: center; /* Pusatkan gambar profil */
+        }
+
+        .icon-land img {
+            margin: 10px; /* Jarak antara ikon */
+        }
+
+        /* Tambahkan gaya tambahan sesuai kebutuhan */
+
+    </style>
+</head>
+<body>
 
 <!-- Landing Page -->
 <section id="home">
@@ -56,6 +399,29 @@
         </div>
     </div>
 </section>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Sisipkan file CSS eksternal jika diperlukan -->
+    <style>
+        /* About Me styles */
+        .about-me {
+            padding: 50px;
+            text-align: left; /* Mengatur teks menjadi rata kiri */
+        }
+
+        .about-text {
+            margin-bottom: 20px;
+        }
+
+        .about-img {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
 
 <!-- About Me -->
 <section id="about">
@@ -80,7 +446,31 @@
     </div>
 </section>
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        /* Skills styles */
+        #skills {
+            padding: 50px;
+            display: flex;
+            flex-wrap: wrap; /* Membungkus konten ke baris baru jika lebarnya tidak cukup */
+            gap: 20px; /* Memberikan jarak antara item */
+        }
 
+        .skill-icons {
+            display: flex; /* Mengatur konten di dalam .skill-icons menjadi flex */
+            align-items: center; /* Menyusun konten secara vertikal di tengah */
+            margin-right: 20px; /* Memberikan jarak antara item */
+        }
+
+        .skill-info {
+            max-width: 300px; /* Lebar maksimum teks keterampilan */
+        }
+    </style>
+</head>
+<body>
 
 <!-- Skills -->
 <section id="skills">
@@ -95,6 +485,35 @@
         </div>
     </div>
 </section>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        /* Why Should Me styles */
+        #why-should-me {
+            padding: 50px;
+            text-align: left; /* Mengatur konten menjadi rata kiri */
+        }
+
+        .why-should-me {
+            margin-bottom: 30px;
+        }
+
+        .Whyme-icons {
+            display: inline-block;
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+
+        .Whyme-icons img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
 
 <!-- Why Should Me -->
 <section id="why-should-me">
@@ -114,6 +533,36 @@
     </div>
 </section>
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Portfolio styles */
+        #portfolio {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .portfolio {
+            margin-bottom: 30px;
+        }
+
+        .portfolio-images {
+            display: flex;
+            justify-content: center; /* Mengatur gambar agar berada di tengah */
+            flex-wrap: wrap; /* Membungkus gambar ke baris baru jika lebar layar tidak cukup */
+            gap: 10px; /* Memberikan jarak antara gambar */
+        }
+
+        .portfolio-images img {
+            max-width: 100%; /* Mengatur lebar maksimum gambar agar tidak melebihi lebar container */
+            height: auto; /* Menjaga aspek gambar */
+        }
+    </style>
+</head>
+<body>
 
 <!-- Portfolio -->
 <section id="portfolio">
@@ -131,7 +580,48 @@
     </div>
 </section>
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimoni</title>
+    <style>
+        /* Testimoni styles */
+        #testimoni {
+            padding: 50px;
+            text-align: left; /* Mengatur letak teks ke kiri */
+        }
 
+        .testimoni {
+            margin-bottom: 30px;
+        }
+
+        .testimoni-card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        .testimoni-img {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .testimoni-img img {
+            width: 50x;
+            height: 50px;
+            border-radius: 40%; /* Membuat gambar bulat */
+            object-fit: cover; /* Menjaga aspek rasio gambar */
+            margin-bottom: 10px;
+        }
+
+        .testimoni-text {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
     
 <!-- Testimoni -->
 <section id="testimoni">
@@ -160,6 +650,50 @@
     </div>
 </section>
 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        /* Contact styles */
+        #contact {
+            padding: 50px;
+            text-align: left; /* Mengatur letak teks ke kiri */
+        }
+
+        .contact {
+            margin-bottom: 30px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form div {
+            margin-bottom: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #E47917;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #E47917;
+        }
+    </style>
+</head>
+<body>
 
 <!-- Contact -->
 <section id="contact">
@@ -190,7 +724,115 @@
     </div>
 </section>
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Footer styles */
+        footer {
+            background-color: #E47917;
+            padding: 20px 0;
+            text-align: center;
+        }
 
+        .footer {
+            text-align: center; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            text-align: center; 
+        }
+
+        .logo img {
+            width: 100px;
+            height: 50px;
+        }
+
+        .nav-links {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            display: inline-block; 
+        }
+
+        .nav-links li {
+            margin-right: 7px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .nav-links li a:hover {
+            color: #E47917;
+        }
+
+        .wrapper {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .wrapper li {
+            margin-right: 10px;
+        }
+
+        .icon {
+            background-color: #E47917;
+            color: #333;
+            border-radius: 50%;
+            padding: 10px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .icon a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .icon .tooltip {
+            visibility: hidden;
+            width: 120px;
+            background-color: #E47917;
+            color: #;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .icon:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        p {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<br/>
 <!-- Footer -->
 <footer>
     <a href="#" class="back-to-top">Back to Top</a>
@@ -211,7 +853,11 @@
                 </ul>
             </div>
 
-<ul class="wrapper">
+        </div>
+    </section>
+
+
+        <ul class="wrapper">
             <li class="icon facebook">
               <a href="https://www.facebook.com" target="_blank">
                 <span class="tooltip">Facebook</span>
@@ -236,74 +882,56 @@
                 <span><i class="fab fa-linked"></i></span>
               </a>
             </li>
-         </ul>
-     </div>
-     <div class="coppy-right" >
-         <p>&copy; 2021 | <strong>All Rights Reserved.Apsirr</p>
-     </div>
+           </ul>
 
- </div>
+
+           <p>&copy; 2021 | <strong>All Rights Reserved.Apsirr</p>
 </footer>
-
-<script src="assets/js/script.js"></script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-$(document).ready(function(){
-    $('#contact-form').submit(function(e){
-        var error = false;
 
-        // Validasi nama
-        var name = $('#name').val();
-        if(name.trim() == ''){
-            $('#nameLabel').text('Name is required').css('color', 'red');
-            error = true;
-        } else {
-            $('#nameLabel').text('');
-        }
-
-        // Validasi email
-        var email = $('#email').val();
-        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if(email.trim() == ''){
-            $('#emailLabel').text('Email is required').css('color', 'red');
-            error = true;
-        } else if(!emailPattern.test(email)){
-            $('#emailLabel').text('Invalid email format').css('color', 'red');
-            error = true;
-        } else {
-            $('#emailLabel').text('');
-        }
-
-        // Validasi nomor handphone
-        var phone = $('#phone').val();
-        var phonePattern = /^[0-9]+$/;
-        if(phone.trim() == ''){
-            $('#phoneLabel').text('Phone number is required').css('color', 'red');
-            error = true;
-        } else if(!phonePattern.test(phone)){
-            $('#phoneLabel').text('Invalid phone number').css('color', 'red');
-            error = true;
-        } else {
-            $('#phoneLabel').text('');
-        }
-
-        // Validasi pesan
-        var message = $('#message').val();
-        if(message.trim() == ''){
-            $('#messageLabel').text('Message is required').css('color', 'red');
-            error = true;
-        } else {
-            $('#messageLabel').text('');
-        }
-
-        // Menghentikan pengiriman formulir jika ada kesalahan validasi
-        if(error){
+    $(document).ready(function(){
+        // Fungsi untuk mengirim formulir
+        $("#contact-form").submit(function(e){
+            // Menghentikan pengiriman formulir secara default
             e.preventDefault();
-        }
-    });
-});
-</script>
 
-    
+            // Validasi input nama lengkap
+            var fullName = $("#full-name").val();
+            if(fullName == ""){
+                alert("Nama lengkap harus diisi");
+                return false;
+            }
+
+            // Validasi input email
+            var email = $("#email").val();
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if(email == "" || !emailPattern.test(email)){
+                alert("Email tidak valid");
+                return false;
+            }
+
+            // Validasi input nomor handphone
+            var phoneNumber = $("#phone").val();
+            var phonePattern = /^\d{10,12}$/;
+            if(phoneNumber == "" || !phonePattern.test(phoneNumber)){
+                alert("Nomor handphone harus terdiri dari 10-12 digit angka");
+                return false;
+            }
+
+            // Validasi input pesan
+            var message = $("#message").val();
+            if(message == ""){
+                alert("Pesan harus diisi");
+                return false;
+            }
+
+            // Jika semua validasi berhasil, formulir dapat dikirim
+            alert("Formulir berhasil dikirim!");
+            // Tambahkan kode pengiriman formulir ke backend di sini (misalnya AJAX)
+        });
+    });
+</script>
+          
+</body>
 </html>
