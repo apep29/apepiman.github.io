@@ -5,249 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
     </head>
 <body>
-    <nav>
-      <input type="checkbox" id="check">
-      <label for="check" class="checkbtn">
-        <i class="fas fa-bars"></i>
-      </label>
-      <label class="logo">APsirr</label>
-      <ul>
-        <i class="uil uil-search search-icon" id="searchIcon"></i>
-        <div class="search-box">
-          <i class="uil uil-search search-icon"></i>
-          <input type="text" placeholder="Search here..." />
-        <li><a class="active" href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#why me">Contact</a></li>
-        </ul>
-    </nav>
-    <section></section>
-</body>
-<style>
-            /* CSS untuk halaman web responsif */
-    
-            /* Untuk layar dengan lebar maksimum 500px */
-            @media screen and (max-width: 500px) {
-                .landing-content {
-                    flex-direction: column;
-                }
-                .intro, .profile-pic, .icon-land {
-                    width: 100%;
-                    text-align: center;
-                }
-            }
-
-            /* CSS untuk navbar */
-        *{
-            padding: 0;
-            margin: 0;
-            text-decoration: none;
-            list-style: none;
-            box-sizing: border-box;
-        }
-        body{
-            font-family: montserrat;
-        }
-        nav{
-            background: #5b46d7;
-            height: 80px;
-            width: 100%;
-        }
-        label.logo{
-            color:white;
-            font-size:35px;
-            line-height: 80px;
-            padding: 0 100px;
-            font-weight: bold;    
-        }
-        nav ul{
-            float:right;
-            margin-right: 20px;
-        }
-        nav ul li{
-            display: inline-block;
-            line-height: 80px;
-            margin: 0 5px;
-        }
-        nav ul li a{
-            color:white;
-            font-size: 17px;
-            padding: 7px 13px;
-            borderr-radius: 3px;
-            text-transform: uppearcase;
-        }
-        a.active,a.hover{
-            background: #ebe1e1c8;
-            transition: .5s;
-        }
-        .checkbtn{
-            font-size: 30px;
-            color: white;
-            float: right;
-            line-height: 8opx;
-            margin-right: 40px;
-            cursor: pointer;
-            display: none;
-        }
-        #check{
-            display: none;
-        }
-        @media (max-width: 952px){
-            label.logo{
-                font-size: 30px;
-                padding-left: 50px;
-            }
-            nav ul li a{
-                font-size: 16px;
-            }
-        }
-        @media (max-width: 858px){
-            .checkbtn{
-                display: block;
-            }
-            ul{
-                position: fixed;
-                width: 100%;
-                height: 100vh;
-                background: #d7c19f;
-                top: 80px;
-                left: -100%;
-                text-align: center;
-                transition: all .5s;
-            }
-            nav ul li{
-                display: block;
-                margin: 50px 0;
-                line-height: 30px;
-            }
-            nav ul li a{
-                font-size: 20px;
-            }
-            a:hover,a.active{
-                background: none;
-                color: #144a8d;
-            }
-            #check:checked ~ ul{
-                left: 0;
-            }
-        }
-        section{
-            background: url(bg1.jpg) no-repeat;
-            background-size: cover;
-            height: calc(100vh - 80px);
-        }
-        .navbar {
-            background: #144bba;
-            color: #333;
-            text-align: center;
-            padding: 1rem 0;
-        }
-
-        .nav-links {
-            list-style-type: none;
-        }
-
-        .nav-links li {
-            display: inline;
-            margin: 0 10px;
-        }
-
-        .nav-links li a {
-            color: #333;
-            text-decoration: none;
-        }
-        
-        .nav-links li a:hover {
-            color: #0e3bb7;
-        }
-    
-            /* Untuk layar dengan lebar maksimum 300px */
-            @media screen and (max-width: 300px) {
-                .navbar {
-                    padding: 0.5rem 0;
-                }
-                .nav-links li {
-                    display: block;
-                    margin: 10px 0;
-                }
-            }
-        </style>
-    </head>
-    <body>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio</title>
-    <style>
-        /* CSS Styling */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #E47917;
-            color: #333;
-        }
-
-        .navbar {
-            background: #E47917;
-            color: #333;
-            text-align: center;
-            padding: 1rem 0;
-        }
-
-        .nav-links {
-            list-style-type: none;
-        }
-
-        .nav-links li {
-            display: inline;
-            margin: 0 10px;
-        }
-
-        .nav-links li a {
-            color: #333;
-            text-decoration: none;
-        }
-
-        .landing-content {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding: 50px;
-        }
-
-        .intro {
-            flex: 1;
-        }
-
-        .profile-pic {
-            flex: 1;
-            text-align: center;
-        }
-
-        .icon-land img {
-            margin-right: 10px;
-        }
-
-        /* Add your remaining CSS styles here */
-
-    </style>
 <body>
  
 <!-- Navbar -->
-<nav class="navbar">
-    <div class="logo">
+<nav>
+    <div class="nav-bar">
+        <i class='bx bx-menu sidebarOpen' ></i>
+        <span class="logo navLogo"><a href="#">APsirr</a></span>
+        <div class="menu">
+            <div class="logo-toggle">
+                <span class="logo"><a href="#">APsirr</a></span>
+                <i class='bx bx-x siderbarClose'></i>
         <img src="images/mines_103901.png" alt="Logo"  style="width: 100px; height: 50px; ">
     </div>
     <ul class="nav-links">
@@ -777,11 +552,7 @@
                 </ul>
             </div>
 
-        </div>
-    </section>
-
-
-        <ul class="wrapper">
+<ul class="wrapper">
             <li class="icon facebook">
               <a href="https://www.facebook.com" target="_blank">
                 <span class="tooltip">Facebook</span>
@@ -807,9 +578,9 @@
               </a>
             </li>
            </ul>
-
-
-           <p>&copy; 2021 | <strong>All Rights Reserved.Apsirr</p>
+     </div>
+        <div class="coppy-right" >
+            <p>&copy; 2021 | <strong>All Rights Reserved.Apsirr</p>
        </div>
 
   </div>
