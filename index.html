@@ -6,7 +6,7 @@
     <title>Portofolio</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-</head>
+    </head>
 <body>
     <nav>
       <input type="checkbox" id="check">
@@ -810,7 +810,70 @@
 
 
            <p>&copy; 2021 | <strong>All Rights Reserved.Apsirr</p>
+       </div>
+
+  </div>
 </footer>
-          
-</body>
+
+<script src="assets/js/script.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('#contact-form').submit(function(e){
+        var error = false;
+
+        // Validasi nama
+        var name = $('#name').val();
+        if(name.trim() == ''){
+            $('#nameLabel').text('Name is required').css('color', 'red');
+            error = true;
+        } else {
+            $('#nameLabel').text('');
+        }
+
+        // Validasi email
+        var email = $('#email').val();
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if(email.trim() == ''){
+            $('#emailLabel').text('Email is required').css('color', 'red');
+            error = true;
+        } else if(!emailPattern.test(email)){
+            $('#emailLabel').text('Invalid email format').css('color', 'red');
+            error = true;
+        } else {
+            $('#emailLabel').text('');
+        }
+
+        // Validasi nomor handphone
+        var phone = $('#phone').val();
+        var phonePattern = /^[0-9]+$/;
+        if(phone.trim() == ''){
+            $('#phoneLabel').text('Phone number is required').css('color', 'red');
+            error = true;
+        } else if(!phonePattern.test(phone)){
+            $('#phoneLabel').text('Invalid phone number').css('color', 'red');
+            error = true;
+        } else {
+            $('#phoneLabel').text('');
+        }
+
+        // Validasi pesan
+        var message = $('#message').val();
+        if(message.trim() == ''){
+            $('#messageLabel').text('Message is required').css('color', 'red');
+            error = true;
+        } else {
+            $('#messageLabel').text('');
+        }
+
+        // Menghentikan pengiriman formulir jika ada kesalahan validasi
+        if(error){
+            e.preventDefault();
+        }
+    });
+});
+</script>
+
+    
 </html>
