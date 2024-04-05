@@ -29,79 +29,6 @@
         </ul>
     </nav>
     <section></section>
-</head>
-<body>
-    <h1>Formulir Kontak</h1>
-    <form id="contact-form" action="#" method="post">
-        <div>
-            <label for="full-name">Nama lengkap:</label>
-            <input type="text" id="full-name" name="full-name">
-        </div>
-        <div>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
-        </div>
-        <div>
-            <label for="phone">Nomor handphone:</label>
-            <input type="text" id="phone" name="phone">
-        </div>
-        <div>
-            <label for="message">Pesan:</label>
-            <textarea id="message" name="message"></textarea>
-        </div>
-        <button type="submit">Kirim</button>
-    </form>
-
-    <!-- Skrip jQuery untuk validasi formulir -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $("#contact-form").submit(function(e){
-                e.preventDefault();
-
-                var fullName = $("#full-name").val();
-                var email = $("#email").val();
-                var phone = $("#phone").val();
-                var message = $("#message").val();
-
-                if (fullName === "") {
-                    alert("Nama lengkap harus diisi");
-                    return false;
-                }
-
-                if (email === "") {
-                    alert("Email harus diisi");
-                    return false;
-                } else {
-                    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailPattern.test(email)) {
-                        alert("Format email tidak valid");
-                        return false;
-                    }
-                }
-
-                if (phone === "") {
-                    alert("Nomor handphone harus diisi");
-                    return false;
-                } else {
-                    var phonePattern = /^\d{10,12}$/;
-                    if (!phonePattern.test(phone)) {
-                        alert("Nomor handphone harus terdiri dari 10-12 digit angka");
-                        return false;
-                    }
-                }
-
-                if (message === "") {
-                    alert("Pesan harus diisi");
-                    return false;
-                }
-
-                // Jika semua validasi berhasil, formulir dapat dikirim
-                alert("Formulir berhasil dikirim!");
-                // Tambahan kode untuk mengirim formulir ke backend dapat ditambahkan di sini
-            });
-        });
-    </script>
 </body>
 </html>
 <style>
@@ -691,139 +618,78 @@
 <body>
 
 <!-- Contact -->
-<section id="contact">
-    <div class="contact">
-        <h2>Contact</h2>
+<body>
+    <h1>Formulir Kontak</h1>
+    <form id="contact-form" action="#" method="post">
+        <div>
+            <label for="full-name">Nama lengkap:</label>
+            <input type="text" id="full-name" name="full-name">
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+        </div>
+        <div>
+            <label for="phone">Nomor handphone:</label>
+            <input type="text" id="phone" name="phone">
+        </div>
+        <div>
+            <label for="message">Pesan:</label>
+            <textarea id="message" name="message"></textarea>
+        </div>
+        <button type="submit">Kirim</button>
+    </form>
 
+    <!-- Skrip jQuery untuk validasi formulir -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#contact-form").submit(function(e){
+                e.preventDefault();
 
-<form action="#" method="post">
-    <div>
-        <label for="map">Tasikmalaya, Jawa Barat </label>
-    </div>
-    <div>
-        <label for="message">Apsirr07_ </label>
-    </div>
-    <div>
-        <label for="phone">082623274613 </label>
-    </div>
-    <div>
-       <label for="email">APsirr07@gmail.com </label>
-    </div>
-    <button type="submit">Submit</button>
+                var fullName = $("#full-name").val();
+                var email = $("#email").val();
+                var phone = $("#phone").val();
+                var message = $("#message").val();
 
-    <div class="portfolio-images">
-        <img src="images/peta.jpeg" alt="Project 1" style="width: 300px; height: 100px;">
-</form>
+                if (fullName === "") {
+                    alert("Nama lengkap harus diisi");
+                    return false;
+                }
 
-        <!-- Contact form or contact information goes here -->
-    </div>
-</section>
+                if (email === "") {
+                    alert("Email harus diisi");
+                    return false;
+                } else {
+                    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailPattern.test(email)) {
+                        alert("Format email tidak valid");
+                        return false;
+                    }
+                }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Footer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        /* Footer styles */
-        footer {
-            background-color: #E47917;
-            padding: 20px 0;
-            text-align: center;
-        }
+                if (phone === "") {
+                    alert("Nomor handphone harus diisi");
+                    return false;
+                } else {
+                    var phonePattern = /^\d{10,12}$/;
+                    if (!phonePattern.test(phone)) {
+                        alert("Nomor handphone harus terdiri dari 10-12 digit angka");
+                        return false;
+                    }
+                }
 
-        .footer {
-            text-align: center; 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            text-align: center; 
-        }
+                if (message === "") {
+                    alert("Pesan harus diisi");
+                    return false;
+                }
 
-        .logo img {
-            width: 100px;
-            height: 50px;
-        }
-
-        .nav-links {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            display: inline-block; 
-        }
-
-        .nav-links li {
-            margin-right: 7px;
-        }
-
-        .nav-links li a {
-            text-decoration: none;
-            color: #333;
-        }
-
-        .nav-links li a:hover {
-            color: #E47917;
-        }
-
-        .wrapper {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        .wrapper li {
-            margin-right: 10px;
-        }
-
-        .icon {
-            background-color: #E47917;
-            color: #333;
-            border-radius: 50%;
-            padding: 10px;
-            display: inline-block;
-            position: relative;
-        }
-
-        .icon a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 30px;
-            height: 30px;
-            text-decoration: none;
-            color: #333;
-        }
-
-        .icon .tooltip {
-            visibility: hidden;
-            width: 120px;
-            background-color: #E47917;
-            color: #;
-            text-align: center;
-            border-radius: 6px;
-            padding: 5px 0;
-            position: absolute;
-            z-index: 1;
-            bottom: 125%;
-            left: 50%;
-            margin-left: -60px;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .icon:hover .tooltip {
-            visibility: visible;
-            opacity: 1;
-        }
-
-        p {
-            margin-top: 20px;
-            font-size: 14px;
-        }
+                // Jika semua validasi berhasil, formulir dapat dikirim
+                alert("Formulir berhasil dikirim!");
+                // Tambahan kode untuk mengirim formulir ke backend dapat ditambahkan di sini
+            });
+        });
+    </script>
     </style>
 </head>
 <body>
